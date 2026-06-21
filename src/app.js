@@ -4,7 +4,14 @@ const postRoutes=require("./routes/postRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://mern-posts-frontend-seven.vercel.app"
+    ]
+  })
+);
 
 app.use(express.json());
 
